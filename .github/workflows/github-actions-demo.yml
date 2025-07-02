@@ -22,7 +22,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check out the repository to the runner
       - uses: actions/checkout@v4
-      # Runs Hello World Script
+      # Make the script executable
+      - name: Make the Hello World Script executable
+        run: chmod +x ./hello_world.sh
+      # Runs the script
       - name: Run the Hello World Script
         run: ./hello_world.sh
